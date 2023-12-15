@@ -99,10 +99,10 @@ public class OneGramChat {
         String password = typingText();
         try {
             selectedUser = verificationUser(name, password);
+            System.out.println(TEXT_AUTHORIZATION_USER);
         } catch (NoUserInList e) {
             System.out.println(e.getMessage());
         }
-        System.out.println(TEXT_AUTHORIZATION_USER);
     }
 
     private User verificationUser(String name, String password) throws NoUserInList {
