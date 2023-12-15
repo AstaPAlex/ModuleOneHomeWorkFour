@@ -22,7 +22,7 @@ public class OneGramChat {
             "exit" - окончание работы программы""";
     private static final String NO_MESSAGE = "Сообщений нет";
     private static final String TEXT_NO_USER = "Пользователь не выбран";
-    public static Scanner scanner = new Scanner(System.in);
+    public static final Scanner scanner = new Scanner(System.in);
     private final List<User> listUsers;
     private User selectedUser;
 
