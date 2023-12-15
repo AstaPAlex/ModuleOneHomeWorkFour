@@ -5,6 +5,7 @@ public class Airplane extends Mechanics implements FlyableDrive {
     public void fly() {
         System.out.println("Самолет летит");
     }
+
     @Override
     public void go() {
         System.out.println("самолет едет");
