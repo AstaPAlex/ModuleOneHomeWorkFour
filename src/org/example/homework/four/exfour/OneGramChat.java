@@ -20,8 +20,11 @@ public class OneGramChat {
             "написать" - запуск функции "написать письмо"
             "прочитать" - запуск функции "прочитать письмо"
             "exit" - окончание работы программы""";
-    private static final String NO_MESSAGE = "Сообщений нет";
-    private static final String TEXT_NO_USER = "Пользователь не выбран";
+    private static final String NO_MESSAGE = "Сообщений нет!";
+    private static final String TEXT_NO_USER = "Пользователь не выбран!";
+    private static final String TEXT_NEW_USER = "Пользователь создан!";
+    private static final String TEXT_AUTHORIZATION_USER = "Пользователь авторизован!";
+    private static final String TEXT_LETTER = "Сообщение отправлено!";
     public static final Scanner scanner = new Scanner(System.in);
     private final List<User> listUsers;
     private User selectedUser;
@@ -87,6 +90,7 @@ public class OneGramChat {
         String name = typingText();
         String password = typingText();
         listUsers.add(new User(name, password));
+        System.out.println(TEXT_NEW_USER);
     }
 
     private void logInUser() {
@@ -98,6 +102,7 @@ public class OneGramChat {
         } catch (NoUserInList e) {
             System.out.println(e.getMessage());
         }
+        System.out.println(TEXT_AUTHORIZATION_USER);
     }
 
     private User verificationUser(String name, String password) throws NoUserInList {
@@ -148,6 +153,7 @@ public class OneGramChat {
         String message = typingText();
         selectedUser.addMessage(new Message(message, TypeMessage.OUTPUT, userTo.getName()));
         userTo.addMessage(new Message(message, TypeMessage.INPUT, selectedUser.getName()));
+        System.out.println(TEXT_LETTER);
     }
 
     private void readMessage() {
